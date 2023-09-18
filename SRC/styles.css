@@ -7,6 +7,14 @@
 .Humid {
   padding-top: 10px;
 }
-a {
-  padding-left: 420px;
+.coder {
+  padding-left: 195px;
+}
+.units {
+  font-size: 16px;
+  top: -16px;
+  position: relative;
+}
+li {
+  list-style: none;
 }
