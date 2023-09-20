@@ -24,10 +24,10 @@ function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML =
     Math.round(response.data.main.temp) + "°F";
-  document.querySelector("#humid").innerHTML =
-    "Humidity :" + response.data.main.humidity;
-  document.querySelector("#precip").innerHTML =
-    "Precipitation :" + response.data.main.precipitation;
+  document.querySelector("#humid").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function search(event) {
