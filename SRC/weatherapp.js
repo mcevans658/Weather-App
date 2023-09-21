@@ -21,12 +21,19 @@ let days = [
 dayTime.innerHTML = `${days[day]}, ${hours}:${minutes}`;
 
 function displayWeather(response) {
+  let iconElement = document.querySelector("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML =
     Math.round(response.data.main.temp) + "°F";
   document.querySelector("#humid").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/10d@2x.png`
   );
 }
 
