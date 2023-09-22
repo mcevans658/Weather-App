@@ -18,3 +18,13 @@
 li {
   list-style: none;
 }
+h1 {
+  font-weight: 500;
+}
+.weather-temperature strong {
+  font-size: 40px;
+  font-weight: 500;
+}
+li:first-letter {
+  text-transform: capitalize;
+}
