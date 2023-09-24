@@ -22,9 +22,11 @@ dayTime.innerHTML = `${days[day]}, ${hours}:${minutes}`;
 
 function displayWeather(response) {
   let iconElement = document.querySelector("#icon");
+  fahrenheitTemp = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML =
-    Math.round(response.data.main.temp) + "°F";
+  document.querySelector("#temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
   document.querySelector("#humid").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -47,7 +49,30 @@ function handleSubmit(event) {
   search(city.value);
 }
 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let celsiusTemp = (5 / 9) * (fahrenheitTemp - 32);
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemp);
+}
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  document.querySelector("#temp").innerHTML = Math.round(fahrenheitTemp);
+}
+
+let fahrenheitTemp = null;
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 search("Duluth");
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);

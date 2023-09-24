@@ -11,7 +11,7 @@
   padding-left: 195px;
 }
 .units {
-  font-size: 16px;
+  font-size: 13px;
   top: -16px;
   position: relative;
 }
@@ -27,4 +27,17 @@ h1 {
 }
 li:first-letter {
   text-transform: capitalize;
+}
+.temp {
+  font-size: 40px;
+  font-weight: 600px;
+}
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: black;
 }
