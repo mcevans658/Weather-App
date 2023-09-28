@@ -19,11 +19,11 @@
     <div class="app">
         <form class="search-form" id="search-form">
             <div class="row">
-                <div class="col-4">
+                <div class="col-9">
             <input
             type="search"
             placeholder="Type a City"
-            class="form control"
+            class="form-control"
             id ="city-input"
             />
     </div>
@@ -31,7 +31,7 @@
     <input 
     type="submit"
     value="search"
-    class="form control"
+   class="btn btn-primary w-100"
     />
     </div>
     </div>
@@ -41,22 +41,21 @@
         <div class="col">
     <h1 id="city"></h1>
     <div class = "float-left">
+      <ul>
+              <li>Last updated: <span id="time"></span></li>
+              <li id="description"></li>
+            </ul>
+            <br/>
   <a class="temp"id="temp"></a>
-  <span class="units">
-<a href="#" id="fahrenheit-link" class="active">°F</a>
- | 
-<a href="#" id="celsius-link">°C</a>
-</span>
+  <span class="units">°F <img id="icon" src="" alt="Clear"></img></span>
 </div>
-<br/>
- <a><img id="icon" src="" alt="Clear"></img></a>
+            </div>
+            <div class="col-4" id="weather-details">
+              <br/>
+              <br/>
             <li class="description"></li> 
             <li class="humid">Humidity: <span id= "humid"></span> %</li>
-            <li class="wind">Wind: <span id="wind"></span> Km/H</li>
-            </div>
-            <div class="col">
-                <h2>Weather</h2>
-                <h2 id="time"></h2>
+            <li class="wind">Wind: <span id="wind"></span> m/H</li>
             </div>
             </div>
             <br/>
